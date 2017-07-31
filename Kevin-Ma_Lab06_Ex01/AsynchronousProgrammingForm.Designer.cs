@@ -89,6 +89,7 @@
             this.calculateBtn.Name = "calculateBtn";
             this.calculateBtn.Size = new System.Drawing.Size(98, 23);
             this.calculateBtn.TabIndex = 1;
+            this.calculateBtn.TabStop = false;
             this.calculateBtn.Text = "Calculate";
             this.calculateBtn.UseVisualStyleBackColor = true;
             // 
@@ -131,6 +132,7 @@
             this.checkForEvenOddBtn.Name = "checkForEvenOddBtn";
             this.checkForEvenOddBtn.Size = new System.Drawing.Size(160, 23);
             this.checkForEvenOddBtn.TabIndex = 1;
+            this.checkForEvenOddBtn.TabStop = false;
             this.checkForEvenOddBtn.Text = "Check for Even or Odd";
             this.checkForEvenOddBtn.UseVisualStyleBackColor = true;
             // 
@@ -177,7 +179,6 @@
             this.intRadioBtn.Name = "intRadioBtn";
             this.intRadioBtn.Size = new System.Drawing.Size(74, 20);
             this.intRadioBtn.TabIndex = 4;
-            this.intRadioBtn.TabStop = true;
             this.intRadioBtn.Text = "Integers";
             this.intRadioBtn.UseVisualStyleBackColor = true;
             // 
@@ -189,7 +190,6 @@
             this.doublesRadioBtn.Name = "doublesRadioBtn";
             this.doublesRadioBtn.Size = new System.Drawing.Size(77, 20);
             this.doublesRadioBtn.TabIndex = 5;
-            this.doublesRadioBtn.TabStop = true;
             this.doublesRadioBtn.Text = "Doubles";
             this.doublesRadioBtn.UseVisualStyleBackColor = true;
             // 
@@ -201,7 +201,6 @@
             this.charRadioBtn.Name = "charRadioBtn";
             this.charRadioBtn.Size = new System.Drawing.Size(54, 20);
             this.charRadioBtn.TabIndex = 6;
-            this.charRadioBtn.TabStop = true;
             this.charRadioBtn.Text = "Char";
             this.charRadioBtn.UseVisualStyleBackColor = true;
             // 
@@ -212,6 +211,7 @@
             this.generateValuesBtn.Name = "generateValuesBtn";
             this.generateValuesBtn.Size = new System.Drawing.Size(145, 23);
             this.generateValuesBtn.TabIndex = 7;
+            this.generateValuesBtn.TabStop = false;
             this.generateValuesBtn.Text = "Generate Values";
             this.generateValuesBtn.UseVisualStyleBackColor = true;
             // 
@@ -222,6 +222,7 @@
             this.listDisplayRichTB.Name = "listDisplayRichTB";
             this.listDisplayRichTB.Size = new System.Drawing.Size(55, 202);
             this.listDisplayRichTB.TabIndex = 8;
+            this.listDisplayRichTB.TabStop = false;
             this.listDisplayRichTB.Text = "";
             // 
             // inputValSearchLbl
@@ -288,6 +289,7 @@
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(75, 23);
             this.searchBtn.TabIndex = 4;
+            this.searchBtn.TabStop = false;
             this.searchBtn.Text = "Search";
             this.searchBtn.UseVisualStyleBackColor = true;
             // 
@@ -298,6 +300,7 @@
             this.displayBtn.Name = "displayBtn";
             this.displayBtn.Size = new System.Drawing.Size(75, 23);
             this.displayBtn.TabIndex = 14;
+            this.displayBtn.TabStop = false;
             this.displayBtn.Text = "Display";
             this.displayBtn.UseVisualStyleBackColor = true;
             // 
@@ -318,6 +321,7 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(328, 49);
             this.richTextBox1.TabIndex = 15;
+            this.richTextBox1.TabStop = false;
             this.richTextBox1.Text = "";
             // 
             // AsynchronousProgrammingForm
