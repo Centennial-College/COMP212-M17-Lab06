@@ -56,5 +56,11 @@ namespace Kevin_Ma_Lab06_Ex01
             //toggles the Enabled for the displayBtn
             displayBtn.Enabled = !(lowIndexTB.Text.Equals(String.Empty) || highIndexTB.Text.Equals(String.Empty));
         }
+
+        private void radioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            //toggles the Enabled for the generateValuesBtn
+            generateValuesBtn.Enabled = intRadioBtn.Checked || doublesRadioBtn.Checked || charRadioBtn.Checked;
+        }
     }
 }

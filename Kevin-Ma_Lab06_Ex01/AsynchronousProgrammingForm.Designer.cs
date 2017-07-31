@@ -309,6 +309,7 @@
             this.charRadioBtn.TabIndex = 6;
             this.charRadioBtn.Text = "Char";
             this.charRadioBtn.UseVisualStyleBackColor = true;
+            this.charRadioBtn.CheckedChanged += new System.EventHandler(this.radioBtn_CheckedChanged);
             // 
             // doublesRadioBtn
             // 
@@ -320,6 +321,7 @@
             this.doublesRadioBtn.TabIndex = 5;
             this.doublesRadioBtn.Text = "Doubles";
             this.doublesRadioBtn.UseVisualStyleBackColor = true;
+            this.doublesRadioBtn.CheckedChanged += new System.EventHandler(this.radioBtn_CheckedChanged);
             // 
             // intRadioBtn
             // 
@@ -331,6 +333,7 @@
             this.intRadioBtn.TabIndex = 4;
             this.intRadioBtn.Text = "Integers";
             this.intRadioBtn.UseVisualStyleBackColor = true;
+            this.intRadioBtn.CheckedChanged += new System.EventHandler(this.radioBtn_CheckedChanged);
             // 
             // AsynchronousProgrammingForm
             // 
