@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             this.calculateAsynchGroupBox = new System.Windows.Forms.GroupBox();
-            this.getFactorialLbl = new System.Windows.Forms.Label();
-            this.calculateBtn = new System.Windows.Forms.Button();
             this.getFactorialTB = new System.Windows.Forms.TextBox();
+            this.calculateBtn = new System.Windows.Forms.Button();
+            this.getFactorialLbl = new System.Windows.Forms.Label();
             this.checkForEvenOddGroupBox = new System.Windows.Forms.GroupBox();
             this.inputNumberTB = new System.Windows.Forms.TextBox();
             this.checkForEvenOddBtn = new System.Windows.Forms.Button();
             this.inputNumberLbl = new System.Windows.Forms.Label();
             this.displayListAndSearchGroupBox = new System.Windows.Forms.GroupBox();
-            this.intRadioBtn = new System.Windows.Forms.RadioButton();
-            this.doublesRadioBtn = new System.Windows.Forms.RadioButton();
-            this.charRadioBtn = new System.Windows.Forms.RadioButton();
-            this.generateValuesBtn = new System.Windows.Forms.Button();
-            this.listDisplayRichTB = new System.Windows.Forms.RichTextBox();
-            this.inputValSearchLbl = new System.Windows.Forms.Label();
-            this.inputLowIndexLbl = new System.Windows.Forms.Label();
-            this.inputHighIndexLbl = new System.Windows.Forms.Label();
-            this.searchTB = new System.Windows.Forms.TextBox();
-            this.lowIndexTB = new System.Windows.Forms.TextBox();
-            this.highIndexTB = new System.Windows.Forms.TextBox();
-            this.searchBtn = new System.Windows.Forms.Button();
-            this.displayBtn = new System.Windows.Forms.Button();
-            this.outputOfValBetwLowAndHighLbl = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.outputOfValBetwLowAndHighLbl = new System.Windows.Forms.Label();
+            this.displayBtn = new System.Windows.Forms.Button();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.highIndexTB = new System.Windows.Forms.TextBox();
+            this.lowIndexTB = new System.Windows.Forms.TextBox();
+            this.searchTB = new System.Windows.Forms.TextBox();
+            this.inputHighIndexLbl = new System.Windows.Forms.Label();
+            this.inputLowIndexLbl = new System.Windows.Forms.Label();
+            this.inputValSearchLbl = new System.Windows.Forms.Label();
+            this.listDisplayRichTB = new System.Windows.Forms.RichTextBox();
+            this.generateValuesBtn = new System.Windows.Forms.Button();
+            this.charRadioBtn = new System.Windows.Forms.RadioButton();
+            this.doublesRadioBtn = new System.Windows.Forms.RadioButton();
+            this.intRadioBtn = new System.Windows.Forms.RadioButton();
             this.calculateAsynchGroupBox.SuspendLayout();
             this.checkForEvenOddGroupBox.SuspendLayout();
             this.displayListAndSearchGroupBox.SuspendLayout();
@@ -70,15 +70,15 @@
             this.calculateAsynchGroupBox.TabStop = false;
             this.calculateAsynchGroupBox.Text = "(1) Calculate Asynchronously";
             // 
-            // getFactorialLbl
+            // getFactorialTB
             // 
-            this.getFactorialLbl.AutoSize = true;
-            this.getFactorialLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.getFactorialLbl.Location = new System.Drawing.Point(10, 40);
-            this.getFactorialLbl.Name = "getFactorialLbl";
-            this.getFactorialLbl.Size = new System.Drawing.Size(101, 16);
-            this.getFactorialLbl.TabIndex = 0;
-            this.getFactorialLbl.Text = "Get Factorial of:";
+            this.getFactorialTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.getFactorialTB.Location = new System.Drawing.Point(126, 37);
+            this.getFactorialTB.Name = "getFactorialTB";
+            this.getFactorialTB.Size = new System.Drawing.Size(124, 22);
+            this.getFactorialTB.TabIndex = 1;
+            this.getFactorialTB.TabStop = false;
+            this.getFactorialTB.TextChanged += new System.EventHandler(this.getFactorialTB_TextChanged);
             // 
             // calculateBtn
             // 
@@ -93,14 +93,15 @@
             this.calculateBtn.Text = "Calculate";
             this.calculateBtn.UseVisualStyleBackColor = true;
             // 
-            // getFactorialTB
+            // getFactorialLbl
             // 
-            this.getFactorialTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.getFactorialTB.Location = new System.Drawing.Point(126, 37);
-            this.getFactorialTB.Name = "getFactorialTB";
-            this.getFactorialTB.Size = new System.Drawing.Size(124, 22);
-            this.getFactorialTB.TabIndex = 1;
-            this.getFactorialTB.TabStop = false;
+            this.getFactorialLbl.AutoSize = true;
+            this.getFactorialLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.getFactorialLbl.Location = new System.Drawing.Point(10, 40);
+            this.getFactorialLbl.Name = "getFactorialLbl";
+            this.getFactorialLbl.Size = new System.Drawing.Size(101, 16);
+            this.getFactorialLbl.TabIndex = 0;
+            this.getFactorialLbl.Text = "Get Factorial of:";
             // 
             // checkForEvenOddGroupBox
             // 
@@ -123,6 +124,7 @@
             this.inputNumberTB.Size = new System.Drawing.Size(135, 22);
             this.inputNumberTB.TabIndex = 1;
             this.inputNumberTB.TabStop = false;
+            this.inputNumberTB.TextChanged += new System.EventHandler(this.inputNumberTB_TextChanged);
             // 
             // checkForEvenOddBtn
             // 
@@ -171,27 +173,131 @@
             this.displayListAndSearchGroupBox.TabStop = false;
             this.displayListAndSearchGroupBox.Text = "(3) Display List of Values and Search";
             // 
-            // intRadioBtn
+            // richTextBox1
             // 
-            this.intRadioBtn.AutoSize = true;
-            this.intRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.intRadioBtn.Location = new System.Drawing.Point(10, 38);
-            this.intRadioBtn.Name = "intRadioBtn";
-            this.intRadioBtn.Size = new System.Drawing.Size(74, 20);
-            this.intRadioBtn.TabIndex = 4;
-            this.intRadioBtn.Text = "Integers";
-            this.intRadioBtn.UseVisualStyleBackColor = true;
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(87, 217);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(328, 49);
+            this.richTextBox1.TabIndex = 15;
+            this.richTextBox1.TabStop = false;
+            this.richTextBox1.Text = "";
             // 
-            // doublesRadioBtn
+            // outputOfValBetwLowAndHighLbl
             // 
-            this.doublesRadioBtn.AutoSize = true;
-            this.doublesRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.doublesRadioBtn.Location = new System.Drawing.Point(90, 38);
-            this.doublesRadioBtn.Name = "doublesRadioBtn";
-            this.doublesRadioBtn.Size = new System.Drawing.Size(77, 20);
-            this.doublesRadioBtn.TabIndex = 5;
-            this.doublesRadioBtn.Text = "Doubles";
-            this.doublesRadioBtn.UseVisualStyleBackColor = true;
+            this.outputOfValBetwLowAndHighLbl.AutoSize = true;
+            this.outputOfValBetwLowAndHighLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outputOfValBetwLowAndHighLbl.Location = new System.Drawing.Point(87, 194);
+            this.outputOfValBetwLowAndHighLbl.Name = "outputOfValBetwLowAndHighLbl";
+            this.outputOfValBetwLowAndHighLbl.Size = new System.Drawing.Size(282, 16);
+            this.outputOfValBetwLowAndHighLbl.TabIndex = 4;
+            this.outputOfValBetwLowAndHighLbl.Text = "Output of values between Low and High:";
+            // 
+            // displayBtn
+            // 
+            this.displayBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.displayBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.displayBtn.Location = new System.Drawing.Point(340, 144);
+            this.displayBtn.Name = "displayBtn";
+            this.displayBtn.Size = new System.Drawing.Size(75, 23);
+            this.displayBtn.TabIndex = 14;
+            this.displayBtn.TabStop = false;
+            this.displayBtn.Text = "Display";
+            this.displayBtn.UseVisualStyleBackColor = true;
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.searchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.searchBtn.Location = new System.Drawing.Point(340, 80);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(75, 23);
+            this.searchBtn.TabIndex = 4;
+            this.searchBtn.TabStop = false;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = true;
+            // 
+            // highIndexTB
+            // 
+            this.highIndexTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.highIndexTB.Location = new System.Drawing.Point(234, 163);
+            this.highIndexTB.Name = "highIndexTB";
+            this.highIndexTB.Size = new System.Drawing.Size(100, 22);
+            this.highIndexTB.TabIndex = 13;
+            this.highIndexTB.TabStop = false;
+            this.highIndexTB.TextChanged += new System.EventHandler(this.highIndexTB_TextChanged);
+            // 
+            // lowIndexTB
+            // 
+            this.lowIndexTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.lowIndexTB.Location = new System.Drawing.Point(234, 123);
+            this.lowIndexTB.Name = "lowIndexTB";
+            this.lowIndexTB.Size = new System.Drawing.Size(100, 22);
+            this.lowIndexTB.TabIndex = 12;
+            this.lowIndexTB.TabStop = false;
+            this.lowIndexTB.TextChanged += new System.EventHandler(this.lowIndexTB_TextChanged);
+            // 
+            // searchTB
+            // 
+            this.searchTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.searchTB.Location = new System.Drawing.Point(234, 80);
+            this.searchTB.Name = "searchTB";
+            this.searchTB.Size = new System.Drawing.Size(100, 22);
+            this.searchTB.TabIndex = 11;
+            this.searchTB.TabStop = false;
+            this.searchTB.TextChanged += new System.EventHandler(this.searchTB_TextChanged);
+            // 
+            // inputHighIndexLbl
+            // 
+            this.inputHighIndexLbl.AutoSize = true;
+            this.inputHighIndexLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.inputHighIndexLbl.Location = new System.Drawing.Point(123, 166);
+            this.inputHighIndexLbl.Name = "inputHighIndexLbl";
+            this.inputHighIndexLbl.Size = new System.Drawing.Size(105, 16);
+            this.inputHighIndexLbl.TabIndex = 10;
+            this.inputHighIndexLbl.Text = "Input High Index:";
+            // 
+            // inputLowIndexLbl
+            // 
+            this.inputLowIndexLbl.AutoSize = true;
+            this.inputLowIndexLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.inputLowIndexLbl.Location = new System.Drawing.Point(127, 126);
+            this.inputLowIndexLbl.Name = "inputLowIndexLbl";
+            this.inputLowIndexLbl.Size = new System.Drawing.Size(101, 16);
+            this.inputLowIndexLbl.TabIndex = 9;
+            this.inputLowIndexLbl.Text = "Input Low Index:";
+            // 
+            // inputValSearchLbl
+            // 
+            this.inputValSearchLbl.AutoSize = true;
+            this.inputValSearchLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.inputValSearchLbl.Location = new System.Drawing.Point(87, 83);
+            this.inputValSearchLbl.Name = "inputValSearchLbl";
+            this.inputValSearchLbl.Size = new System.Drawing.Size(141, 16);
+            this.inputValSearchLbl.TabIndex = 4;
+            this.inputValSearchLbl.Text = "Input Value for Search:";
+            // 
+            // listDisplayRichTB
+            // 
+            this.listDisplayRichTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listDisplayRichTB.Location = new System.Drawing.Point(25, 64);
+            this.listDisplayRichTB.Name = "listDisplayRichTB";
+            this.listDisplayRichTB.Size = new System.Drawing.Size(55, 202);
+            this.listDisplayRichTB.TabIndex = 8;
+            this.listDisplayRichTB.TabStop = false;
+            this.listDisplayRichTB.Text = "";
+            // 
+            // generateValuesBtn
+            // 
+            this.generateValuesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.generateValuesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.generateValuesBtn.Location = new System.Drawing.Point(270, 37);
+            this.generateValuesBtn.Name = "generateValuesBtn";
+            this.generateValuesBtn.Size = new System.Drawing.Size(145, 23);
+            this.generateValuesBtn.TabIndex = 7;
+            this.generateValuesBtn.TabStop = false;
+            this.generateValuesBtn.Text = "Generate Values";
+            this.generateValuesBtn.UseVisualStyleBackColor = true;
             // 
             // charRadioBtn
             // 
@@ -204,125 +310,27 @@
             this.charRadioBtn.Text = "Char";
             this.charRadioBtn.UseVisualStyleBackColor = true;
             // 
-            // generateValuesBtn
+            // doublesRadioBtn
             // 
-            this.generateValuesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.generateValuesBtn.Location = new System.Drawing.Point(270, 37);
-            this.generateValuesBtn.Name = "generateValuesBtn";
-            this.generateValuesBtn.Size = new System.Drawing.Size(145, 23);
-            this.generateValuesBtn.TabIndex = 7;
-            this.generateValuesBtn.TabStop = false;
-            this.generateValuesBtn.Text = "Generate Values";
-            this.generateValuesBtn.UseVisualStyleBackColor = true;
+            this.doublesRadioBtn.AutoSize = true;
+            this.doublesRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.doublesRadioBtn.Location = new System.Drawing.Point(90, 38);
+            this.doublesRadioBtn.Name = "doublesRadioBtn";
+            this.doublesRadioBtn.Size = new System.Drawing.Size(77, 20);
+            this.doublesRadioBtn.TabIndex = 5;
+            this.doublesRadioBtn.Text = "Doubles";
+            this.doublesRadioBtn.UseVisualStyleBackColor = true;
             // 
-            // listDisplayRichTB
+            // intRadioBtn
             // 
-            this.listDisplayRichTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listDisplayRichTB.Location = new System.Drawing.Point(25, 64);
-            this.listDisplayRichTB.Name = "listDisplayRichTB";
-            this.listDisplayRichTB.Size = new System.Drawing.Size(55, 202);
-            this.listDisplayRichTB.TabIndex = 8;
-            this.listDisplayRichTB.TabStop = false;
-            this.listDisplayRichTB.Text = "";
-            // 
-            // inputValSearchLbl
-            // 
-            this.inputValSearchLbl.AutoSize = true;
-            this.inputValSearchLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.inputValSearchLbl.Location = new System.Drawing.Point(87, 83);
-            this.inputValSearchLbl.Name = "inputValSearchLbl";
-            this.inputValSearchLbl.Size = new System.Drawing.Size(141, 16);
-            this.inputValSearchLbl.TabIndex = 4;
-            this.inputValSearchLbl.Text = "Input Value for Search:";
-            // 
-            // inputLowIndexLbl
-            // 
-            this.inputLowIndexLbl.AutoSize = true;
-            this.inputLowIndexLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.inputLowIndexLbl.Location = new System.Drawing.Point(127, 126);
-            this.inputLowIndexLbl.Name = "inputLowIndexLbl";
-            this.inputLowIndexLbl.Size = new System.Drawing.Size(101, 16);
-            this.inputLowIndexLbl.TabIndex = 9;
-            this.inputLowIndexLbl.Text = "Input Low Index:";
-            // 
-            // inputHighIndexLbl
-            // 
-            this.inputHighIndexLbl.AutoSize = true;
-            this.inputHighIndexLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.inputHighIndexLbl.Location = new System.Drawing.Point(123, 166);
-            this.inputHighIndexLbl.Name = "inputHighIndexLbl";
-            this.inputHighIndexLbl.Size = new System.Drawing.Size(105, 16);
-            this.inputHighIndexLbl.TabIndex = 10;
-            this.inputHighIndexLbl.Text = "Input High Index:";
-            // 
-            // searchTB
-            // 
-            this.searchTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.searchTB.Location = new System.Drawing.Point(234, 80);
-            this.searchTB.Name = "searchTB";
-            this.searchTB.Size = new System.Drawing.Size(100, 22);
-            this.searchTB.TabIndex = 11;
-            this.searchTB.TabStop = false;
-            // 
-            // lowIndexTB
-            // 
-            this.lowIndexTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lowIndexTB.Location = new System.Drawing.Point(234, 123);
-            this.lowIndexTB.Name = "lowIndexTB";
-            this.lowIndexTB.Size = new System.Drawing.Size(100, 22);
-            this.lowIndexTB.TabIndex = 12;
-            this.lowIndexTB.TabStop = false;
-            // 
-            // highIndexTB
-            // 
-            this.highIndexTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.highIndexTB.Location = new System.Drawing.Point(234, 163);
-            this.highIndexTB.Name = "highIndexTB";
-            this.highIndexTB.Size = new System.Drawing.Size(100, 22);
-            this.highIndexTB.TabIndex = 13;
-            this.highIndexTB.TabStop = false;
-            // 
-            // searchBtn
-            // 
-            this.searchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.searchBtn.Location = new System.Drawing.Point(340, 80);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(75, 23);
-            this.searchBtn.TabIndex = 4;
-            this.searchBtn.TabStop = false;
-            this.searchBtn.Text = "Search";
-            this.searchBtn.UseVisualStyleBackColor = true;
-            // 
-            // displayBtn
-            // 
-            this.displayBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.displayBtn.Location = new System.Drawing.Point(340, 144);
-            this.displayBtn.Name = "displayBtn";
-            this.displayBtn.Size = new System.Drawing.Size(75, 23);
-            this.displayBtn.TabIndex = 14;
-            this.displayBtn.TabStop = false;
-            this.displayBtn.Text = "Display";
-            this.displayBtn.UseVisualStyleBackColor = true;
-            // 
-            // outputOfValBetwLowAndHighLbl
-            // 
-            this.outputOfValBetwLowAndHighLbl.AutoSize = true;
-            this.outputOfValBetwLowAndHighLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outputOfValBetwLowAndHighLbl.Location = new System.Drawing.Point(87, 194);
-            this.outputOfValBetwLowAndHighLbl.Name = "outputOfValBetwLowAndHighLbl";
-            this.outputOfValBetwLowAndHighLbl.Size = new System.Drawing.Size(282, 16);
-            this.outputOfValBetwLowAndHighLbl.TabIndex = 4;
-            this.outputOfValBetwLowAndHighLbl.Text = "Output of values between Low and High:";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(87, 217);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(328, 49);
-            this.richTextBox1.TabIndex = 15;
-            this.richTextBox1.TabStop = false;
-            this.richTextBox1.Text = "";
+            this.intRadioBtn.AutoSize = true;
+            this.intRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.intRadioBtn.Location = new System.Drawing.Point(10, 38);
+            this.intRadioBtn.Name = "intRadioBtn";
+            this.intRadioBtn.Size = new System.Drawing.Size(74, 20);
+            this.intRadioBtn.TabIndex = 4;
+            this.intRadioBtn.Text = "Integers";
+            this.intRadioBtn.UseVisualStyleBackColor = true;
             // 
             // AsynchronousProgrammingForm
             // 
@@ -335,6 +343,7 @@
             this.Name = "AsynchronousProgrammingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Asynchronous Programming";
+            this.Load += new System.EventHandler(this.AsynchronousProgrammingForm_Load);
             this.calculateAsynchGroupBox.ResumeLayout(false);
             this.calculateAsynchGroupBox.PerformLayout();
             this.checkForEvenOddGroupBox.ResumeLayout(false);
