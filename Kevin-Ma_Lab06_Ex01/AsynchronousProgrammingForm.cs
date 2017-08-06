@@ -83,5 +83,52 @@ namespace Kevin_Ma_Lab06_Ex01
             //toggles the Enabled for the generateValuesBtn
             generateValuesBtn.Enabled = intRadioBtn.Checked || doublesRadioBtn.Checked || charRadioBtn.Checked;
         }
+
+        private async void calculateBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int input;
+                if ((input = int.Parse(this.getFactorialTB.Text)) < 0)
+                {
+                    throw new FormatException();
+                }
+
+                /**
+                 * shouldn't calculate factorial whose result larger than long
+                 * max value as this would cause overflow and inccorect results
+                 * 
+                 * in C#, long.MaxValue = 9.223372036854775807e+18
+                 * 
+                 * 20! = 2.432902008 E+18
+                 * 
+                 * 21! = 5.109094217 E+19
+                 * 
+                 * Since we only accept positive integers, we simply need to 
+                 * restrict user input to 0-20 since 21! would be larger than
+                 * long.MaxValue
+                 */
+                if (input > 20)
+                {
+                    throw new InputValueTooLargeException("This program only calculates factorials up to 20.\n\nPlease enter an positive integer less than or equal to 20.");
+                }
+
+                long factorialResult = await Task.Run(() => Factorial(input));
+                MessageBox.Show($"The factorial of {this.getFactorialTB.Text} is {factorialResult:n0}", "Factorial was Successfully Calculated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //NOTE: n0 gives no digits after dp and adds commas in thousands place for a number
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show($"Please enter a positive integer into the Factorial Input TextBox.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (InputValueTooLargeException ex)
+            {
+                MessageBox.Show(ex.Message, "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                this.getFactorialTB.Text = string.Empty;
+            }
+        }
     }
 }

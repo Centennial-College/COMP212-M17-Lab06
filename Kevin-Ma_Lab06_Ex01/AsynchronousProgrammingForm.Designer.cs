@@ -92,6 +92,7 @@
             this.calculateBtn.TabStop = false;
             this.calculateBtn.Text = "Calculate";
             this.calculateBtn.UseVisualStyleBackColor = true;
+            this.calculateBtn.Click += new System.EventHandler(this.calculateBtn_Click);
             // 
             // getFactorialLbl
             // 
