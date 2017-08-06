@@ -16,6 +16,17 @@ namespace Kevin_Ma_Lab06_Ex01
         List<char> charList;
         Random rng;
 
+        /**
+         * need to have this because the radioBtn checked may not neccessarily be the list currently on focus
+         * in the list box
+         * 
+         * e.g. Consider checking char radio button but not pressing generate values, then the previously generated
+         * list would still be the focus for the search and display functionalities. 
+         * 
+         * This is why we need this variable in order to help us determine which list to query/display from.
+         */
+        char currentListType;
+
         public AsynchronousProgrammingForm()
         {
             InitializeComponent();
@@ -81,6 +92,11 @@ namespace Kevin_Ma_Lab06_Ex01
             generateValuesBtn.Enabled = false;
             searchBtn.Enabled = false;
             displayBtn.Enabled = false;
+
+            //disable searching and displaying values from list by default because the list is empty initially
+            this.searchTB.Enabled = false;
+            this.lowIndexTB.Enabled = false;
+            this.highIndexTB.Enabled = false;
         }
 
         private void getFactorialTB_TextChanged(object sender, EventArgs e)
@@ -194,6 +210,7 @@ namespace Kevin_Ma_Lab06_Ex01
                     intList.Add(rng.Next(10, 100)); //generates random int values between 10 and 99
                 }
                 this.listDisplayListBox.DataSource = intList;
+                currentListType = 'i';
             }
             else if (doublesRadioBtn.Checked)
             {
@@ -203,6 +220,7 @@ namespace Kevin_Ma_Lab06_Ex01
                     dblList.Add(Math.Round(rng.NextDouble() * (100 - 10) + 10, 2)); //generates random int values between 10 and 99
                 }
                 this.listDisplayListBox.DataSource = dblList;
+                currentListType = 'd';
             }
             //generateValuesBtn only enabled if one of the three radio buttons are checked
             //so if reaches here, only option is that charRadioBtn is checked
@@ -214,6 +232,59 @@ namespace Kevin_Ma_Lab06_Ex01
                     charList.Add((char)rng.Next(65, 123)); //generates random char values from ascii 65 (A) to ascii 122 (z)
                 }
                 this.listDisplayListBox.DataSource = charList;
+                currentListType = 'c';
+            }
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            bool searchValueFound;
+            //restrict input depending on the radio button checked
+            try
+            {
+                if (currentListType == 'i')
+                {
+                    int searchInputValue = int.Parse(this.searchTB.Text);
+                    searchValueFound = SearchData(intList, searchInputValue);
+                }
+                else if (currentListType == 'd')
+                {
+                    double searchInputValue = double.Parse(this.searchTB.Text);
+                    searchValueFound = SearchData(dblList, searchInputValue);
+                }
+                else //currentListType=='c'
+                {
+                    char searchInputValue = char.Parse(this.searchTB.Text);
+                    searchValueFound = SearchData(charList, searchInputValue);
+                }
+
+                MessageBox.Show($"The search value {this.searchTB.Text} was " + (searchValueFound ? "" : "not ") + "found in the list.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please enter a(n) " +
+                   (currentListType == 'i' ? "integer" : currentListType == 'd' ? "double" : "character") +
+                    " value into the Search Input TextBox.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool SearchData<T>(List<T> list, T searchValue)
+        {
+            return list.Contains(searchValue);
+        }
+
+        /// <summary>
+        /// only enable searching and displaying values from the list after a list has been generated
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void listDisplayListBox_DataSourceChanged(object sender, EventArgs e)
+        {
+            if (listDisplayListBox.DataSource != null)
+            {
+                this.searchTB.Enabled = true;
+                this.lowIndexTB.Enabled = true;
+                this.highIndexTB.Enabled = true;
             }
         }
     }

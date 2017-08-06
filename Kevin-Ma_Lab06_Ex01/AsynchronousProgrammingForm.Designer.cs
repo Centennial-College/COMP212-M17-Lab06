@@ -217,6 +217,7 @@
             this.searchBtn.TabStop = false;
             this.searchBtn.Text = "Search";
             this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // highIndexTB
             // 
@@ -336,6 +337,7 @@
             this.listDisplayListBox.Name = "listDisplayListBox";
             this.listDisplayListBox.Size = new System.Drawing.Size(55, 196);
             this.listDisplayListBox.TabIndex = 16;
+            this.listDisplayListBox.DataSourceChanged += new System.EventHandler(this.listDisplayListBox_DataSourceChanged);
             // 
             // AsynchronousProgrammingForm
             // 
