@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,9 +6,43 @@ namespace Kevin_Ma_Lab06_Ex01
 {
     public partial class AsynchronousProgrammingForm : Form
     {
+        //Declare a delegate type
+        delegate bool isEvenOrOdd(int num);
+
         public AsynchronousProgrammingForm()
         {
             InitializeComponent();
+
+            //SECOND GROUP BOX
+            //Create delegates that refer to lambda expressions
+            isEvenOrOdd isEven = num => num % 2 == 0;
+            isEvenOrOdd isOdd = num => num % 2 != 0;
+
+            //Event Handler
+            this.checkForEvenOddBtn.Click += (sender, e) =>
+            {
+                try
+                {
+                    int input = int.Parse(inputNumberTB.Text);
+
+                    if (isEven(input))
+                    {
+                        MessageBox.Show($"The number {input} is Even.", "Even Number", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    if (isOdd(input))
+                    {
+                        MessageBox.Show($"The number {input} is Odd.", "Odd Number", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show($"Please enter an integer into the Input Number TextBox.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    this.inputNumberTB.Text = string.Empty;
+                }
+            };
         }
 
         /// <summary>
@@ -84,14 +112,20 @@ namespace Kevin_Ma_Lab06_Ex01
             generateValuesBtn.Enabled = intRadioBtn.Checked || doublesRadioBtn.Checked || charRadioBtn.Checked;
         }
 
+        /// <summary>
+        /// Asynchronously calculates the factorial of the input value in the getFactorialTB textbox. Only calculates factorial up to 20 since
+        /// the Factorial(int num) method was implemented with long data type. The result will be displayed in a MessageBox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void calculateBtn_Click(object sender, EventArgs e)
         {
             try
             {
                 int input;
-                if ((input = int.Parse(this.getFactorialTB.Text)) < 0)
+                if ((input = int.Parse(this.getFactorialTB.Text)) < 0)  //can raise FormatException if inpt is anything other than integers
                 {
-                    throw new FormatException();
+                    throw new FormatException();    //raise FormatException for negative integers
                 }
 
                 /**
