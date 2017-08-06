@@ -17,6 +17,27 @@ namespace Kevin_Ma_Lab06_Ex01
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Recursive implementation of Factorial method.
+        /// </summary>
+        /// <param name="num">The nth factorial to be found</param>
+        /// <returns>The factorial of the param 'num'</returns>
+        private long Factorial(long num)
+        {
+            // 0! = 1
+            if (num == 0)
+                return 1;
+
+            /**
+             * 1! = 1*1 or 1*0!
+             * 2! = 2*1 or 2*1!
+             * ...
+             * etc.
+             */
+            return num * Factorial(num - 1);
+        }
+
+        //EVENT HANDLERS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         private void AsynchronousProgrammingForm_Load(object sender, EventArgs e)
         {
             //disable the buttons on form load because should not be able to click them with no input
