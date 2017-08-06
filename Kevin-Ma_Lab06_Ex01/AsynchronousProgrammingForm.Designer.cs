@@ -47,11 +47,11 @@
             this.inputHighIndexLbl = new System.Windows.Forms.Label();
             this.inputLowIndexLbl = new System.Windows.Forms.Label();
             this.inputValSearchLbl = new System.Windows.Forms.Label();
-            this.listDisplayRichTB = new System.Windows.Forms.RichTextBox();
             this.generateValuesBtn = new System.Windows.Forms.Button();
             this.charRadioBtn = new System.Windows.Forms.RadioButton();
             this.doublesRadioBtn = new System.Windows.Forms.RadioButton();
             this.intRadioBtn = new System.Windows.Forms.RadioButton();
+            this.listDisplayListBox = new System.Windows.Forms.ListBox();
             this.calculateAsynchGroupBox.SuspendLayout();
             this.checkForEvenOddGroupBox.SuspendLayout();
             this.displayListAndSearchGroupBox.SuspendLayout();
@@ -151,6 +151,7 @@
             // 
             // displayListAndSearchGroupBox
             // 
+            this.displayListAndSearchGroupBox.Controls.Add(this.listDisplayListBox);
             this.displayListAndSearchGroupBox.Controls.Add(this.richTextBox1);
             this.displayListAndSearchGroupBox.Controls.Add(this.outputOfValBetwLowAndHighLbl);
             this.displayListAndSearchGroupBox.Controls.Add(this.displayBtn);
@@ -161,7 +162,6 @@
             this.displayListAndSearchGroupBox.Controls.Add(this.inputHighIndexLbl);
             this.displayListAndSearchGroupBox.Controls.Add(this.inputLowIndexLbl);
             this.displayListAndSearchGroupBox.Controls.Add(this.inputValSearchLbl);
-            this.displayListAndSearchGroupBox.Controls.Add(this.listDisplayRichTB);
             this.displayListAndSearchGroupBox.Controls.Add(this.generateValuesBtn);
             this.displayListAndSearchGroupBox.Controls.Add(this.charRadioBtn);
             this.displayListAndSearchGroupBox.Controls.Add(this.doublesRadioBtn);
@@ -278,16 +278,6 @@
             this.inputValSearchLbl.TabIndex = 4;
             this.inputValSearchLbl.Text = "Input Value for Search:";
             // 
-            // listDisplayRichTB
-            // 
-            this.listDisplayRichTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listDisplayRichTB.Location = new System.Drawing.Point(25, 64);
-            this.listDisplayRichTB.Name = "listDisplayRichTB";
-            this.listDisplayRichTB.Size = new System.Drawing.Size(55, 202);
-            this.listDisplayRichTB.TabIndex = 8;
-            this.listDisplayRichTB.TabStop = false;
-            this.listDisplayRichTB.Text = "";
-            // 
             // generateValuesBtn
             // 
             this.generateValuesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -299,6 +289,7 @@
             this.generateValuesBtn.TabStop = false;
             this.generateValuesBtn.Text = "Generate Values";
             this.generateValuesBtn.UseVisualStyleBackColor = true;
+            this.generateValuesBtn.Click += new System.EventHandler(this.generateValuesBtn_Click);
             // 
             // charRadioBtn
             // 
@@ -335,6 +326,16 @@
             this.intRadioBtn.Text = "Integers";
             this.intRadioBtn.UseVisualStyleBackColor = true;
             this.intRadioBtn.CheckedChanged += new System.EventHandler(this.radioBtn_CheckedChanged);
+            // 
+            // listDisplayListBox
+            // 
+            this.listDisplayListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.listDisplayListBox.FormattingEnabled = true;
+            this.listDisplayListBox.ItemHeight = 16;
+            this.listDisplayListBox.Location = new System.Drawing.Point(16, 68);
+            this.listDisplayListBox.Name = "listDisplayListBox";
+            this.listDisplayListBox.Size = new System.Drawing.Size(55, 196);
+            this.listDisplayListBox.TabIndex = 16;
             // 
             // AsynchronousProgrammingForm
             // 
@@ -373,7 +374,6 @@
         private System.Windows.Forms.RadioButton doublesRadioBtn;
         private System.Windows.Forms.RadioButton intRadioBtn;
         private System.Windows.Forms.Button generateValuesBtn;
-        private System.Windows.Forms.RichTextBox listDisplayRichTB;
         private System.Windows.Forms.Label inputValSearchLbl;
         private System.Windows.Forms.Label inputLowIndexLbl;
         private System.Windows.Forms.Label inputHighIndexLbl;
@@ -384,6 +384,7 @@
         private System.Windows.Forms.Button displayBtn;
         private System.Windows.Forms.Label outputOfValBetwLowAndHighLbl;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.ListBox listDisplayListBox;
     }
 }
 

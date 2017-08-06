@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -8,6 +9,12 @@ namespace Kevin_Ma_Lab06_Ex01
     {
         //Declare a delegate type
         delegate bool isEvenOrOdd(int num);
+
+        //Declared for future use
+        List<int> intList;
+        List<double> dblList;
+        List<char> charList;
+        Random rng;
 
         public AsynchronousProgrammingForm()
         {
@@ -162,6 +169,51 @@ namespace Kevin_Ma_Lab06_Ex01
             finally
             {
                 this.getFactorialTB.Text = string.Empty;
+            }
+        }
+
+        /// <summary>
+        ///  Generate Values button should generate 10 values(between 10 and 99 and by making use of RNG) depending
+        ///  on the selected radio button choice (int, double, char).
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void generateValuesBtn_Click(object sender, EventArgs e)
+        {
+            //resets variables
+            rng = new Random();
+            intList = null;
+            dblList = null;
+            charList = null;
+
+            if (intRadioBtn.Checked)
+            {
+                intList = new List<int>(10);
+                for (int i = 0; i < 10; i++)
+                {
+                    intList.Add(rng.Next(10, 100)); //generates random int values between 10 and 99
+                }
+                this.listDisplayListBox.DataSource = intList;
+            }
+            else if (doublesRadioBtn.Checked)
+            {
+                dblList = new List<double>(10);
+                for (int i = 0; i < 10; i++)
+                {
+                    dblList.Add(Math.Round(rng.NextDouble() * (100 - 10) + 10, 2)); //generates random int values between 10 and 99
+                }
+                this.listDisplayListBox.DataSource = dblList;
+            }
+            //generateValuesBtn only enabled if one of the three radio buttons are checked
+            //so if reaches here, only option is that charRadioBtn is checked
+            else
+            {
+                charList = new List<char>(10);
+                for (int i = 0; i < 10; i++)
+                {
+                    charList.Add((char)rng.Next(65, 123)); //generates random char values from ascii 65 (A) to ascii 122 (z)
+                }
+                this.listDisplayListBox.DataSource = charList;
             }
         }
     }
