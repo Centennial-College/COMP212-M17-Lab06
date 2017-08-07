@@ -37,7 +37,8 @@
             this.checkForEvenOddBtn = new System.Windows.Forms.Button();
             this.inputNumberLbl = new System.Windows.Forms.Label();
             this.displayListAndSearchGroupBox = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.displayListBox = new System.Windows.Forms.ListBox();
+            this.listDisplayListBox = new System.Windows.Forms.ListBox();
             this.outputOfValBetwLowAndHighLbl = new System.Windows.Forms.Label();
             this.displayBtn = new System.Windows.Forms.Button();
             this.searchBtn = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.charRadioBtn = new System.Windows.Forms.RadioButton();
             this.doublesRadioBtn = new System.Windows.Forms.RadioButton();
             this.intRadioBtn = new System.Windows.Forms.RadioButton();
-            this.listDisplayListBox = new System.Windows.Forms.ListBox();
             this.calculateAsynchGroupBox.SuspendLayout();
             this.checkForEvenOddGroupBox.SuspendLayout();
             this.displayListAndSearchGroupBox.SuspendLayout();
@@ -151,8 +151,8 @@
             // 
             // displayListAndSearchGroupBox
             // 
+            this.displayListAndSearchGroupBox.Controls.Add(this.displayListBox);
             this.displayListAndSearchGroupBox.Controls.Add(this.listDisplayListBox);
-            this.displayListAndSearchGroupBox.Controls.Add(this.richTextBox1);
             this.displayListAndSearchGroupBox.Controls.Add(this.outputOfValBetwLowAndHighLbl);
             this.displayListAndSearchGroupBox.Controls.Add(this.displayBtn);
             this.displayListAndSearchGroupBox.Controls.Add(this.searchBtn);
@@ -174,15 +174,28 @@
             this.displayListAndSearchGroupBox.TabStop = false;
             this.displayListAndSearchGroupBox.Text = "(3) Display List of Values and Search";
             // 
-            // richTextBox1
+            // displayListBox
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(87, 217);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(328, 49);
-            this.richTextBox1.TabIndex = 15;
-            this.richTextBox1.TabStop = false;
-            this.richTextBox1.Text = "";
+            this.displayListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.displayListBox.FormattingEnabled = true;
+            this.displayListBox.ItemHeight = 16;
+            this.displayListBox.Location = new System.Drawing.Point(87, 217);
+            this.displayListBox.Name = "displayListBox";
+            this.displayListBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.displayListBox.Size = new System.Drawing.Size(328, 52);
+            this.displayListBox.TabIndex = 17;
+            // 
+            // listDisplayListBox
+            // 
+            this.listDisplayListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.listDisplayListBox.FormattingEnabled = true;
+            this.listDisplayListBox.ItemHeight = 16;
+            this.listDisplayListBox.Location = new System.Drawing.Point(16, 68);
+            this.listDisplayListBox.Name = "listDisplayListBox";
+            this.listDisplayListBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.listDisplayListBox.Size = new System.Drawing.Size(55, 196);
+            this.listDisplayListBox.TabIndex = 16;
+            this.listDisplayListBox.DataSourceChanged += new System.EventHandler(this.listDisplayListBox_DataSourceChanged);
             // 
             // outputOfValBetwLowAndHighLbl
             // 
@@ -205,6 +218,7 @@
             this.displayBtn.TabStop = false;
             this.displayBtn.Text = "Display";
             this.displayBtn.UseVisualStyleBackColor = true;
+            this.displayBtn.Click += new System.EventHandler(this.displayBtn_Click);
             // 
             // searchBtn
             // 
@@ -328,17 +342,6 @@
             this.intRadioBtn.UseVisualStyleBackColor = true;
             this.intRadioBtn.CheckedChanged += new System.EventHandler(this.radioBtn_CheckedChanged);
             // 
-            // listDisplayListBox
-            // 
-            this.listDisplayListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.listDisplayListBox.FormattingEnabled = true;
-            this.listDisplayListBox.ItemHeight = 16;
-            this.listDisplayListBox.Location = new System.Drawing.Point(16, 68);
-            this.listDisplayListBox.Name = "listDisplayListBox";
-            this.listDisplayListBox.Size = new System.Drawing.Size(55, 196);
-            this.listDisplayListBox.TabIndex = 16;
-            this.listDisplayListBox.DataSourceChanged += new System.EventHandler(this.listDisplayListBox_DataSourceChanged);
-            // 
             // AsynchronousProgrammingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -385,8 +388,8 @@
         private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.Button displayBtn;
         private System.Windows.Forms.Label outputOfValBetwLowAndHighLbl;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.ListBox listDisplayListBox;
+        private System.Windows.Forms.ListBox displayListBox;
     }
 }
 

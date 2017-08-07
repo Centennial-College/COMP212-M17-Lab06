@@ -287,5 +287,47 @@ namespace Kevin_Ma_Lab06_Ex01
                 this.highIndexTB.Enabled = true;
             }
         }
+
+        private void displayBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int lowIndex = int.Parse(this.lowIndexTB.Text);
+                int highIndex = int.Parse(this.highIndexTB.Text);
+
+                //there are only 10 elements in the generated lists
+                if (lowIndex < 0 || lowIndex > 9 || highIndex < 0 || highIndex > 9)
+                    throw new FormatException();
+
+                if (highIndex < lowIndex)
+                {
+                    throw new IndexOutOfRangeException("High Index must be greater than or equal to low index!");
+                }
+
+                switch (currentListType)
+                {
+                    case 'i':
+                        this.displayListBox.DataSource = PrintData(intList, lowIndex, highIndex); break;
+                    case 'd':
+                        this.displayListBox.DataSource = PrintData(dblList, lowIndex, highIndex); break;
+                    default:
+                        this.displayListBox.DataSource = PrintData(charList, lowIndex, highIndex); break;
+                }
+
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please enter positive integers between 0 and 9 into the Index Input TextBoxes.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (IndexOutOfRangeException ex)
+            {
+                MessageBox.Show(ex.Message, "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private List<T> PrintData<T>(List<T> list, int lowIndex, int highIndex)
+        {
+            return list.GetRange(lowIndex, highIndex - lowIndex + 1);
+        }
     }
 }
